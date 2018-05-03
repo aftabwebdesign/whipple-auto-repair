@@ -20,7 +20,49 @@
         <div class="page-content">
             <div class="content-block">
      <h2>About Us</h2>  
-     <p><iframe class="external" src="https://www.google.com/maps/embed?pb=!4v1525308439736!6m8!1m7!1sp_7iM1JFeU8Hx3OztxnERQ!2m2!1d37.49437564563354!2d-122.2346740414668!3f172.16!4f0.6099999999999994!5f1.563995933304343" width="100%" height="auto" frameborder="0" style="border:0" allowfullscreen></iframe></p>  
+ 
+     
+     <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 37.494144, lng: -122.234528},
+          zoom: 8
+        });
+        var ctaLayer = new google.maps.KmlLayer({
+          url: 'http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml',
+          map: map
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Z4WpGJiFQJoxC8_1nsjL5ItXRgy-Jpk&callback=initMap"
+    async defer></script>
+
+
+    <div id="map"></div>
+    <script>
+      var map = new GMaps({
+        el: '#map',
+        lat: 37.494144,
+        lng: -122.234528
+      });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      
    
 
