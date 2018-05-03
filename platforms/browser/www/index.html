@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Your app title -->
+    <title>My App</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left  panel-reveal">
+        <div class="content-block">
+            <p>Useful Links</p>
+            <ul class="cstm">
+            <li><a href="about.html" class = "close-panel">DMV Registration</a></li>
+            <li><a href="services.html" class = "close-panel">Auto Repair Services</a></li>
+            <li><a href="station.html" class = "close-panel">About Us</a></li>
+</ul>
+            </div>
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                    </div>
+                                        <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                                        <div class="center sliding">Whipple Auto Repair</div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block">
+                            <div class="center"><img style="margin-top: -20px;"src="img/Whipple-Auto-Redwood-City.png" /></div>
+                            <p style="text-align: center">Everything from regular maintenance, DMV registration and smog checks to complete repair.</p>
+
+                                <div class = "buttons-row">
+                                        <a href = "#tab1" class = "tab-link active button">Map</a>
+                                        <a href = "#tab2" class = "tab-link button">Coupon</a>
+                                        <a href = "#tab3" class = "tab-link button">Address</a>
+                                     </div>
+                                  </div>
+                                  
+                                  <div class = "tabs">
+                                     <div id = "tab1" class = "tab active">
+                                        <div class = "content-block">
+                                           <p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6331.167838044474!2d-122.234528!3d37.494144!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x86c9ef1b8b6eccb!2sWhipple+Auto!5e0!3m2!1sen!2sus!4v1525298142175" width="100%" height="auto" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+                                        </div>
+                                     </div>
+                                     
+                                     <div id = "tab2" class = "tab">
+                                        <div class = "content-block">
+                                           <p><img src="http://www.whippleautorepair.com/wp-content/uploads/Smog-Coupon-redwood-city-ca.png" width="100%" height="auto"/></p>
+                                        </div>
+                                     </div>
+                                     
+                                     <div id = "tab3" class = "tab">
+                                        <div class = "content-block">
+                                           <p>503 Whipple Ave,<br />
+                                                Redwood City, CA 94063<br />
+                                                                                                
+                                                <h4>Business Hours:</h4>
+                                                Mon – Fri: 9:00 – 5:00<br />
+                                                Sat: 9:00 – 3:00</p>
+                                        </div>
+                                     </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <!-- Toolbar links -->
+                    <a href="tel:650-365-123" class="button button-big button-fill">Click here to CALL NOW</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+ 
+ <script>
+    var myApp = new Framework7({
+       swipePanel: 'left'
+    });
+ </script>
+</body>
+
+</html>
